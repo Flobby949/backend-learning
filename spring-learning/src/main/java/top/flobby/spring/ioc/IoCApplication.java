@@ -14,7 +14,7 @@ import top.flobby.spring.ioc.entity.*;
 public class IoCApplication {
     public static void main(String[] args) {
         // 1. 配置文件路径
-        String xmlPath = "/applicationContext.xml";
+        String xmlPath = "classpath:applicationContext.xml";
         // 2. 创建spring容器
         ApplicationContext ac = new ClassPathXmlApplicationContext(xmlPath);
 
@@ -23,25 +23,25 @@ public class IoCApplication {
 
     public static void ioCTest(ApplicationContext ac) {
         // 3. 从配置文件中读取配置好的bean
-        UserDao userDao = (UserDao) ac.getBean("userDao");
+        UserDao userDao = ac.getBean("userDao", UserDao.class);
         userDao.say();
     }
 
     public static void setDITest(ApplicationContext ac) {
-        UserService userService = (UserService) ac.getBean("userService");
+        UserService userService = ac.getBean("userService", UserService.class);
         userService.say();
     }
 
     public static void animalTest(ApplicationContext ac) {
-        Cat cat = (Cat) ac.getBean("cat");
+        Cat cat = ac.getBean("cat", Cat.class);
         System.out.println(cat);
-        Dog dog = (Dog) ac.getBean("dog");
+        Dog dog = ac.getBean("dog", Dog.class);
         System.out.println(dog);
     }
 
     public static void bookTest(ApplicationContext ac) {
-        Book bookConstructor = (Book) ac.getBean("bookConstructor");
-        Book bookSet = (Book) ac.getBean("bookSet");
+        Book bookConstructor = ac.getBean("bookConstructor", Book.class);
+        Book bookSet = ac.getBean("bookSet", Book.class);
         System.out.println("通过带参构造方法创建");
         System.out.println(bookConstructor);
         System.out.println("通过默认构造方法创建");
