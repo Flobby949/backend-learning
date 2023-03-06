@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @author : Flobby
  * @program : java-advanced
- * @description : 集合
+ * @description : ArrayList
  * @create : 2023-03-06 23:11
  **/
 
