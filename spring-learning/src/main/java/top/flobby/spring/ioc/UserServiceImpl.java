@@ -9,7 +9,7 @@ package top.flobby.spring.ioc;
 
 public class UserServiceImpl implements UserService{
     private UserDao userDao;
-    public String message;
+    private String message;
 
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
