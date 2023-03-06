@@ -4,5 +4,15 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="UserDao" class="top.flobby.spring.ioc.UserDaoImpl"/>
+    <!--将指定类配置给Spring，让Spring容器创建对象-->
+    <bean id="userDao" class="top.flobby.spring.ioc.UserDaoImpl"/>
+
+    <!--Setting方法实现-->
+    <bean id="userService" class="top.flobby.spring.ioc.UserServiceImpl">
+        <!--将 id 为 userDao 的 Bean 实例注入到 UserService 实例-->
+        <property name="userDao" ref="userDao"/>
+        <property name="message" value="这是UserService的message"/>
+    </bean>
+
+
 </beans>
