@@ -13,7 +13,6 @@
 </head>
 <body>
 <h2>${msg}</h2>
-
 ${user.name}
 
 </body>

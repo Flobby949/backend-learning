@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <!--配置请求，映射 /first 路径-->
-    <bean name="/first" class="top.flobby.spring.controller.FirstController" />
-    <!--处理映射器，将处理器 handler 的 name 作为url进行查找-->
-    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
-    <!--适配器，配置对于处理器中 handlerRequest() 方法的调用-->
-    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />
-    <!--视图解析-->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" />
+    <!--扫包-->
+    <context:component-scan base-package="top.flobby.spring.controller"/>
+    <!--默认跳过 css，js，img 等-->
+    <mvc:default-servlet-handler />
+    <!--使用注解-->
+    <mvc:annotation-driven />
 
 </beans>
