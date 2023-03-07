@@ -1,0 +1,10 @@
+
+b
+java:S1192"GDefine a constant instead of duplicating this literal "HUAWEI" 3 times.(ƒ¹éÅøÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(âÚ£¹
+N	java:S106"9Replace this use of System.out or System.err by a logger.(æí Ã
+S	java:S106"9Replace this use of System.out or System.err by a logger.(—¡é£ıÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(“£ï×
+S	java:S106!"9Replace this use of System.out or System.err by a logger.(‰œ‡¯ûÿÿÿÿ
+Z	java:S106#"9Replace this use of System.out or System.err by a logger.(Î‹Áıÿÿÿÿ8§²õ¼ë0
+X	java:S125&"<This block of commented-out lines of code should be removed.(ìÄ’ÿ8–¦ø¼ë0
