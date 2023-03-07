@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>问卷调查</title>
+</head>
+<body>
+<form action="apply" method="post">
+    <h3>姓名</h3>
+    <label>
+        <input type="text" name="username">
+    </label>
+    <h3>您正在学习的技术方向</h3>
+    <label>
+        <select name="course" style="width: 150px">
+            <option value="java">Java</option>
+            <option value="html">Html</option>
+            <option value="python">Python</option>
+            <option value="golang">Golang</option>
+        </select>
+    </label>
+    <div>
+        <h3>学习目的</h3>
+        <label>
+            就业
+            <input type="checkbox" name="purpose" value="1">
+        </label>
+        <br>
+        <label>
+            工作要求
+            <input type="checkbox" name="purpose" value="2">
+        </label>
+        <br>
+        <label>
+            爱好
+            <input type="checkbox" name="purpose" value="3">
+        </label>
+        <br>
+        <label>
+            其他
+            <input type="checkbox" name="purpose" value="4">
+        </label>
+        <br>
+        <input type="submit" value="提交">
+    </div>
+</form>
+</body>
+</html>
