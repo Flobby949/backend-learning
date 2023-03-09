@@ -26,5 +26,28 @@ public class HashMapSample {
         student.put("height", 182);
         student.put("weight", 81);
         System.out.println(student);
+
+        // get方法获取指定key的value
+        String name = (String) student.get("name");
+        System.out.println("指定key的value：" + name);
+
+        // containsKey 用于判断的key是否存在
+        boolean r1 = student.containsKey("name");
+        System.out.println("判断key是否存在：" + r1);
+
+        // containsKey 用于判断的key是否存在
+        boolean r2 = student.containsValue(11);
+        System.out.println("判断value是否存在：" + r2);
+
+        // size返回键值对总数
+        int count = student.size();
+        System.out.println("键值对总数：" + count);
+
+
+        // remove方式将指定的键值对删除，并返回value
+        Integer remove = (Integer) student.remove("weight");
+        System.out.println("weight项被移除，值为：" + remove);
+        System.out.println("删除后map：" + student);
+
     }
 }
