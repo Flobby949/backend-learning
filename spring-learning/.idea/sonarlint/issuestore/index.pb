@@ -25,8 +25,6 @@ d
 4src/main/java/top/flobby/spring/ioc/UserDaoImpl.java,7\1\7160120272e38f54da21322b7b54f8c923874d52
 v
 Fsrc/main/java/top/flobby/spring/ioc/instance/static_factory/Bean2.java,d\c\dcee0e206e9e5229e59fb64a9e1b412be17a3afc
-o
-?src/main/java/top/flobby/spring/ioc/instance/factory/Bean3.java,5\6\56ed914d32138cd41123c77c7d4b6e96ba35525b
 f
 6src/main/java/top/flobby/spring/ioc/entity/Person.java,d\a\da887acffc67cca8b41f2161f14943b3f9759acf
 k
@@ -49,8 +47,6 @@ Osrc/main/java/top/flobby/spring/ioc/instance/static_factory/MyBean2Factory.java
 Ksrc/main/java/top/flobby/spring/ioc/instance/constructor/InstanceTest1.java,1\5\15dfc95bc0271464b04a5a2de0486b94c8fc1eb5
 ~
 Nsrc/main/java/top/flobby/spring/ioc/instance/static_factory/InstanceTest2.java,2\9\292a9e84a19c4edc5b6bf3aa1a8d64891888aaeb
-w
-Gsrc/main/java/top/flobby/spring/ioc/instance/factory/InstanceTest3.java,e\3\e3d6eceea16fdece955eaf8c1001fe76c742dd9e
 h
 8src/main/java/top/flobby/spring/ioc/scope/ScopeTest.java,a\7\a7c3a94c90797bbe3a7f8a704dc76165dad1c521
 d
@@ -61,3 +57,7 @@ r
 Bsrc/main/java/top/flobby/spring/ioc/annotation/AnnotationTest.java,0\e\0e13a820ad1ce01df9caf3a9959fa3da68a52198
 r
 Bsrc/main/java/top/flobby/spring/ioc/annotation/UserController.java,8\a\8ae0c7abe951a49c0ae932cf7b258cbeeb6243c5
+o
+?src/main/java/top/flobby/spring/ioc/instance/factory/Bean3.java,5\6\56ed914d32138cd41123c77c7d4b6e96ba35525b
+w
+Gsrc/main/java/top/flobby/spring/ioc/instance/factory/InstanceTest3.java,e\3\e3d6eceea16fdece955eaf8c1001fe76c742dd9e

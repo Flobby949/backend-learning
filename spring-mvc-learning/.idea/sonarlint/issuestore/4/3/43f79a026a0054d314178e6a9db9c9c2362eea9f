@@ -1,0 +1,11 @@
+
+^
+java:S1192"HDefine a constant instead of duplicating this literal "success" 4 times.(ùØ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(»«Åûÿÿÿÿ
+N	java:S106%"9Replace this use of System.out or System.err by a logger.(«‹Îõ
+N	java:S106&"9Replace this use of System.out or System.err by a logger.(Éáğè
+N	java:S1063"9Replace this use of System.out or System.err by a logger.(Çíßï
+S	java:S1066"9Replace this use of System.out or System.err by a logger.(Ğ××ıÿÿÿÿ
+U	java:S106G"9Replace this use of System.out or System.err by a logger.(²±ÜÇ8…ÛÙäë0
+s
+java:S1128"QRemove this unused import 'org.springframework.web.bind.annotation.RequestParam'.(Â¬À·ùÿÿÿÿ8³ŒÜäë0
