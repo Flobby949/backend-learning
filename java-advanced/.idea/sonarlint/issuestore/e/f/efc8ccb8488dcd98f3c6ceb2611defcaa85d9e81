@@ -1,8 +1,0 @@
-
-M	java:S106"9Replace this use of System.out or System.err by a logger.(à¢…w
-N	java:S106"9Replace this use of System.out or System.err by a logger.(à ‹Õ
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áþÿÿÿÿ8Øãý³ì0
-U	java:S106"9Replace this use of System.out or System.err by a logger.(±áóØ8øŸÿ³ì0
-U	java:S106"9Replace this use of System.out or System.err by a logger.(µ¡ø»8“õ€´ì0
-Z
-java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8½à‚´ì0
