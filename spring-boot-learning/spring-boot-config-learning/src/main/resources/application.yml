@@ -1,0 +1,19 @@
+person:
+  family: [father,mother]
+  hobby:
+    - play
+    - read
+    - sleep
+  id: 1
+  map: {k1: v1, k2: v2}
+  name: flobby
+  pet:
+    name: kitty
+    type: cat
+
+student:
+  name: studentName
+
+spring:
+  profiles:
+    active: dev
