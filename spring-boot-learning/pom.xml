@@ -25,6 +25,8 @@
         <spring.version>3.0.4</spring.version>
         <hutool.version>5.8.15</hutool.version>
         <fastjson.version>2.0.15</fastjson.version>
+        <aliyun.sdk.version>4.6.3</aliyun.sdk.version>
+        <aliyun.oss.version>3.16.1</aliyun.oss.version>
     </properties>
 
     <parent>
