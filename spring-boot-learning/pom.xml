@@ -15,6 +15,7 @@
     <modules>
         <module>spring-boot-quick-start</module>
         <module>spring-boot-config-learning</module>
+        <module>spring-boot-data-learning</module>
     </modules>
 
     <!--定义版本号等信息-->
@@ -27,6 +28,7 @@
         <fastjson.version>2.0.15</fastjson.version>
         <aliyun.sdk.version>4.6.3</aliyun.sdk.version>
         <aliyun.oss.version>3.16.1</aliyun.oss.version>
+        <mysql.version>8.0.32</mysql.version>
     </properties>
 
     <parent>
@@ -51,7 +53,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -77,6 +78,11 @@
                 <groupId>com.alibaba.fastjson2</groupId>
                 <artifactId>fastjson2</artifactId>
                 <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mysql</groupId>
+                <artifactId>mysql-connector-j</artifactId>
+                <version>${mysql.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

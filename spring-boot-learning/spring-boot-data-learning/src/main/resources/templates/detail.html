@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详情</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .flex {
+            display: flex;
+        }
+        .flex-column {
+            flex-direction: column;
+        }
+        .flex-row {
+            flex-direction: row;
+        }
+        .cover {
+            height: 200px;
+            width: 180px;
+        }
+        .center {
+            justify-content: center;
+            align-items: center;
+        }
+        .p-3 {
+            padding: 30px;
+        }
+        .p-1 {
+            padding: 10px;
+        }
+        .pl-3 {
+            padding-left: 30px;
+        }
+        .m-3 {
+            margin: 30px;
+        }
+        .m-1 {
+            margin: 10px;
+        }
+        .card {
+            box-shadow: 1px 1px 1px #bbbbbb;
+        }
+        .flex-1 {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div th:if="${article.getId() == null}">
+        暂无信息
+    </div>
+    <div  th:if="${article.getId() != null}" class="p-3 flex flex-row">
+        <div class="flex-column flex-1" style="padding-left: 60px">
+            <h1 th:text="${article.getTitle()}"></h1>
+            <img th:src="${article.getCover()}" class="cover">
+            <h3>描述</h3>
+            <div th:text="${article.getContent()}" class="pl-3"></div>
+        </div>
+        <div class="flex-column flex-1" style="padding-top: 60px">
+            <h3>评论</h3>
+            <div th:each="item:${article.getDiscussList()}">
+                <div class="flex flex-column m-1">
+                    <div th:text="${item.getAuthor()+':'}" style="font-weight: bold;margin: 10px;"></div>
+                    <div th:text="${item.getContent()}" class="pl-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
