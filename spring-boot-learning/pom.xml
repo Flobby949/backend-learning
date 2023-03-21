@@ -29,6 +29,7 @@
         <aliyun.sdk.version>4.6.3</aliyun.sdk.version>
         <aliyun.oss.version>3.16.1</aliyun.oss.version>
         <mysql.version>8.0.32</mysql.version>
+        <mybatis.version>3.0.1</mybatis.version>
     </properties>
 
     <parent>
@@ -84,6 +85,12 @@
                 <artifactId>mysql-connector-j</artifactId>
                 <version>${mysql.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

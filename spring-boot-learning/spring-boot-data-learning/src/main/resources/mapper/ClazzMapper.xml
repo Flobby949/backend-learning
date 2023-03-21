@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.flobby.spring.mapper.ClazzMapper">
+
+    <resultMap id="clazzMap" type="Clazz">
+        <id column="clazz_id" property="clazzId"/>
+        <result column="clazz_name" property="clazzName" />
+        <collection property="studentEntityList" ofType="StudentEntity" >
+            <id column="student_id" property="studentId" />
+            <result column="student_name" property="studentName" />
+            <result column="hometown" property="hometown" />
+        </collection>
+    </resultMap>
+
+    <select id="selectByOneToMany" resultMap="clazzMap" parameterType="int">
+        SELECT c.clazz_id, c.clazz_name, ts.student_id, student_name, hometown
+        FROM t_clazz c
+        LEFT JOIN t_student ts on c.clazz_id = ts.clazz_id
+        WHERE c.clazz_id = #{clazzId}
+    </select>
+</mapper>

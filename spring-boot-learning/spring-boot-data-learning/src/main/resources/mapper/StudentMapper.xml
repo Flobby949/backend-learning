@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="top.flobby.spring.mapper.StudentMapper">
+
+    <resultMap id="studentMap" type="StudentEntity">
+        <id column="student_id" property="studentId"/>
+        <result column="student_name" property="studentName"/>
+        <result column="hometown" property="hometown"/>
+        <result column="birthday" property="birthday"/>
+        <association property="clazz" javaType="Clazz">
+            <id column="clazz_id" property="clazzId"/>
+            <result column="clazz_name" property="clazzName"/>
+        </association>
+    </resultMap>
+    <select id="selectManyToOne" resultMap="studentMap" parameterType="int">
+        SELECT *
+        FROM t_student s
+                 LEFT JOIN t_clazz tc on s.clazz_id = tc.clazz_id
+        WHERE s.student_id = #{studentId}
+    </select>
+
+    <insert id="insertBatchStudent" parameterType="studentEntity">
+        INSERT INTO t_student VALUES
+        <foreach collection="studentList" item="student" index="index" separator=",">
+            (#{student.studentId},#{student.clazzId},#{student.studentName},
+            #{student.hometown},#{student.birthday})
+        </foreach>
+    </insert>
+
+    <update id="batchUpdate" parameterType="studentEntity">
+        <foreach collection="studentList" item="student" index="index" open="" close="" separator=";">
+            UPDATE t_student s
+            <set>
+                <if test="student.clazzId != null">
+                    s.clazz_id = #{student.clazzId},
+                </if>
+                <if test="student.studentName != null">
+                    s.student_name = #{student.studentName},
+                </if>
+                <if test="student.hometown != null">
+                    s.hometown = #{student.hometown},
+                </if>
+                <if test="student.birthday != null">
+                    s.birthday = #{student.birthday},
+                </if>
+            </set>
+            WHERE s.student_id = #{student.studentId}
+        </foreach>
+    </update>
+
+    <delete id="batchDelete">
+        DELETE FROM t_student
+        WHERE student_id in
+        <foreach collection="ids" item="id" index="index" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <!--默认将choose中第一个不为空的条件作为查询条件-->
+    <select id="dynamicSelect" resultType="StudentEntity" parameterType="StudentEntity">
+        SELECT *
+        FROM t_student
+        WHERE 1 = 1
+        <choose>
+            <when test="clazzId != null">
+                AND clazz_id = #{clazzId}
+            </when>
+            <when test="studentName != null">
+                AND student_name = #{studentName}
+            </when>
+            <when test="hometown != null">
+                AND hometown = #{hometown}
+            </when>
+        </choose>
+    </select>
+
+    <resultMap id="studentInfo" type="StudentEntity">
+        <id column="student_id" property="studentId"/>
+        <result column="student_name" property="studentName"/>
+        <result column="hometown" property="hometown"/>
+        <result column="birthday" property="birthday"/>
+        <association property="clazz" javaType="Clazz">
+            <id column="clazz_id" property="clazzId"/>
+            <result column="clazz_name" property="clazzName"/>
+        </association>
+        <collection property="courseList" ofType="StudentCourse">
+            <result column="student_id" property="studentId"/>
+            <result column="course_id" property="courseId"/>
+            <association property="course" javaType="Course">
+                <result column="course_name" property="courseName"/>
+            </association>
+        </collection>
+    </resultMap>
+
+    <select id="getStudentInfoById" resultMap="studentInfo" parameterType="int">
+        SELECT ts.student_id,
+               student_name,
+               hometown,
+               birthday,
+               t.clazz_id,
+               clazz_name,
+               tsc.student_id,
+               tsc.course_id,
+               tc.course_name
+        FROM t_student ts
+                 LEFT JOIN t_student_course tsc on ts.student_id = tsc.student_id
+                 LEFT JOIN t_course tc on tsc.course_id = tc.course_id
+                 LEFT JOIN t_clazz t on ts.clazz_id = t.clazz_id
+        WHERE ts.student_id = #{studentId}
+    </select>
+
+</mapper>
