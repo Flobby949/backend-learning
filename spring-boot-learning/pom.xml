@@ -16,6 +16,7 @@
         <module>spring-boot-quick-start</module>
         <module>spring-boot-config-learning</module>
         <module>spring-boot-data-learning</module>
+        <module>spring-boot-filter-interceptor</module>
     </modules>
 
     <!--定义版本号等信息-->
