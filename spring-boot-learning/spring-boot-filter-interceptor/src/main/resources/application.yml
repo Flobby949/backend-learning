@@ -1,2 +1,6 @@
 server:
   port: 9999
+
+context:
+ listener:
+   classes: top.flobby.spring.event.MyListener3
