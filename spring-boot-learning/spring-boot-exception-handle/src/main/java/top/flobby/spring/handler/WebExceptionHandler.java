@@ -1,6 +1,8 @@
 package top.flobby.spring.handler;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -26,5 +28,13 @@ public class WebExceptionHandler {
             log.info(ExceptionEnum.SYSTEM_EXCEPTION.getDes());
         }
         return AjaxResponse.error(e);
+    }
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ResponseBody
+    public AjaxResponse handleBindException(MethodArgumentNotValidException ex) {
+        FieldError fieldError = ex.getBindingResult().getFieldError();
+        assert fieldError != null;
+        return AjaxResponse.error(new CustomException(ExceptionEnum.PARAM_EXCEPTION, fieldError.getDefaultMessage()));
     }
 }

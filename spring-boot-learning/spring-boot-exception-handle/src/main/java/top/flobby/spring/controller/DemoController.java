@@ -1,9 +1,11 @@
 package top.flobby.spring.controller;
 
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import top.flobby.spring.auth.CheckAuthorization;
+import top.flobby.spring.auth.CheckToken;
+import top.flobby.spring.domain.Article;
 import top.flobby.spring.service.ExceptionService;
 import top.flobby.spring.util.AjaxResponse;
 
@@ -20,6 +22,8 @@ public class DemoController {
     private final ExceptionService exceptionService;
 
     @GetMapping("demo/{id}")
+    @CheckToken
+    @CheckAuthorization("admin")
     public AjaxResponse getArticle(@PathVariable Integer id) {
         if (id > 3) {
             exceptionService.getSysException();
@@ -29,5 +33,10 @@ public class DemoController {
             return AjaxResponse.success(exceptionService.getArticle(id));
         }
         return null;
+    }
+
+    @PostMapping("article")
+    public AjaxResponse releaseArticle(@Valid @RequestBody Article article) {
+        return AjaxResponse.success();
     }
 }

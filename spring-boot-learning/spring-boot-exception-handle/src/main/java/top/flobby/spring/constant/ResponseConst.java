@@ -20,6 +20,10 @@ public interface ResponseConst {
      */
     Integer CLIENT_ERROR_CODE = 400;
     /**
+     * 参数错误代码
+     */
+    Integer PARAMS_ERROR_CODE = 404;
+    /**
      * 服务器错误代码
      */
     Integer SERVER_ERROR_CODE = 500;
@@ -27,6 +31,14 @@ public interface ResponseConst {
      * 其他错误代码
      */
     Integer OTHER_ERROR_CODE = 999;
+    /**
+     * 授权错误代码
+     */
+    Integer AUTHORIZATION_ERROR_CODE = 401;
+    /**
+     * 权限不足代码
+     */
+    Integer PERMISSION_ERROR_CODE = 403;
     /**
      * 描述信息
      */
@@ -50,4 +62,16 @@ public interface ResponseConst {
      * 其他错误
      */
     String OTHER_ERROR = "其他异常";
+    /**
+     * 参数错误
+     */
+    String PARAMS_ERROR = "参数非法";
+    /**
+     * 授权错误
+     */
+    String AUTHORIZATION_ERROR = "认证失败";
+    /**
+     * 权限不足
+     */
+    String PERMISSION_ERROR = "权限不足";
 }

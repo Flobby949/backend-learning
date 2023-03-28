@@ -24,7 +24,15 @@ public enum ExceptionEnum {
      * 其他异常
      */
     OTHER_EXCEPTION(ResponseConst.OTHER_ERROR_CODE, ResponseConst.OTHER_ERROR),
-    ;
+    /**
+     * 参数异常
+     */
+    PARAM_EXCEPTION(ResponseConst.PARAMS_ERROR_CODE, ResponseConst.PARAMS_ERROR),
+    /**
+     * 没有授权
+     */
+    NO_AUTHORIZATION(ResponseConst.AUTHORIZATION_ERROR_CODE, ResponseConst.AUTHORIZATION_ERROR),
+    NO_PERMISSION(ResponseConst.PERMISSION_ERROR_CODE, ResponseConst.PERMISSION_ERROR);
 
     ExceptionEnum(Integer code, String des) {
         this.code = code;

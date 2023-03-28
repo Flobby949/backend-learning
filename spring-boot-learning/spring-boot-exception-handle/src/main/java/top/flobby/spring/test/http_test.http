@@ -2,3 +2,16 @@ GET http://localhost:8080/demo/2
 Accept: application/json
 
 ###
+
+GET http://localhost:8080/demo/2
+Accept: application/json
+Authorization: token
+
+###
+
+GET http://localhost:8080/demo/2
+Accept: application/json
+Authorization: token
+role: admin
+
+###
