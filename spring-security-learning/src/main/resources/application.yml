@@ -3,3 +3,6 @@ spring:
     user:
       name: admin
       password: 123
+
+server:
+  port: 9090
