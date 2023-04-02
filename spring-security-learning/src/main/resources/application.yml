@@ -1,8 +1,10 @@
 spring:
-  security:
-    user:
-      name: admin
-      password: 123
+  # DataSource Config
+  datasource:  #数据库配置
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://106.14.246.27:3306/db_security?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true
+    username: root
+    password: kobe24
 
 server:
   port: 9090
