@@ -2,6 +2,7 @@ package top.flobby.security.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
@@ -22,10 +23,14 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         // 配置基本认证方式
         http.authorizeHttpRequests()
-                // 对任意请求都进行认证
-                .anyRequest()
-                .authenticated()
+                // 放行静态资源
+                .requestMatchers(HttpMethod.GET,"/","/*.html","/css/*","/images/*")
+                .permitAll()
                 .and()
+                // 对任意请求都进行认证
+                // .anyRequest()
+                // .authenticated()
+                // .and()
                 // 开启basic认证
                 // .httpBasic();
                 .formLogin()
