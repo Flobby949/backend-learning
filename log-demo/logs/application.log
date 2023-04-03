@@ -1,0 +1,11 @@
+2023-04-03 15:12:03,905 INFO t.f.l.LogDemoApplication [main] Starting LogDemoApplication using Java 17.0.1 with PID 67228 (E:\java-projects\backend-learning\log-demo\target\classes started by Flobby in E:\java-projects\backend-learning\log-demo)
+2023-04-03 15:12:03,921 INFO t.f.l.LogDemoApplication [main] The following 1 profile is active: "prod"
+2023-04-03 15:12:04,670 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2023-04-03 15:12:04,677 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-03 15:12:04,679 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
+2023-04-03 15:12:04,680 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-03 15:12:04,752 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
+2023-04-03 15:12:04,753 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 787 ms
+2023-04-03 15:12:05,062 INFO o.a.c.h.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2023-04-03 15:12:05,088 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-03 15:12:05,097 INFO t.f.l.LogDemoApplication [main] Started LogDemoApplication in 1.642 seconds (process running for 2.334)
