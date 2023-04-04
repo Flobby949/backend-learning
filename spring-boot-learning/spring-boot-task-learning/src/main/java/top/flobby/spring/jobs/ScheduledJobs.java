@@ -3,6 +3,7 @@ package top.flobby.spring.jobs;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import top.flobby.spring.utils.MyQrCodeUtil;
 
 import java.time.LocalDateTime;
 
@@ -22,11 +23,13 @@ public class ScheduledJobs {
      * 固定延迟工作
      * 方法结束五秒后再次执行
      */
-    // @Scheduled(fixedDelay = 5000)
-    public void fixedDelayJob() throws InterruptedException {
-        log.info("fixedDelay 开始时间 {}", LocalDateTime.now());
-        Thread.sleep(10 * 1000);
-        log.info("fixedDelay 结束时间 {}", LocalDateTime.now());
+    @Scheduled(fixedDelay = 10000)
+    public void fixedDelayJob() {
+        // log.info("fixedDelay 开始时间 {}", LocalDateTime.now());
+        // Thread.sleep(10 * 1000);
+        // log.info("fixedDelay 结束时间 {}", LocalDateTime.now());
+        MyQrCodeUtil.createQrCode(String.valueOf(LocalDateTime.now()),
+                "E:\\java-projects\\backend-learning\\spring-boot-learning\\spring-boot-task-learning\\src\\main\\resources\\static\\images\\qrcode.png");
     }
 
 
