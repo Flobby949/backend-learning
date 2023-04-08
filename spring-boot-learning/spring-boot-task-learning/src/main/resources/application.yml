@@ -1,9 +1,13 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/dsl_test?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://127.0.0.1:3306/db_test_quartz?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
     username: root
     password: kobe24
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
+  quartz:
+    job-store-type: JDBC #数据库存储quartz任务配置
+    jdbc:
+      initialize-schema: never #自动初始化表结构，never 从不进行初始化，always 每次都清空数据库进行初始化
