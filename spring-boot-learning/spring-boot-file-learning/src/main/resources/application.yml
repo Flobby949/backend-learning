@@ -1,0 +1,19 @@
+web:
+  custom-file-upload: E:\java-projects\backend-learning\spring-boot-learning\spring-boot-file-learning\fileUpload\
+
+
+spring:
+  servlet:
+    multipart:
+      # -1 表示无限大
+      max-file-size: -1
+      max-request-size: -1
+  web:
+    resources:
+      # 默认有四个，重写配置后丢失默认路径
+      static-locations: classpath:/static/,file:${web.custom-file-upload}
+
+minio:
+  endpoint: http://106.14.246.27:9000
+  assessKey: admin
+  secretKey: 12345678
