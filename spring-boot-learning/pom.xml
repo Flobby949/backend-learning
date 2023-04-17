@@ -21,6 +21,7 @@
         <module>spring-boot-task-learning</module>
         <module>spring-boot-file-learning</module>
         <module>spring-boot-cache-learning</module>
+        <module>spring-boot-server-push</module>
     </modules>
 
     <!--定义版本号等信息-->
