@@ -1,4 +1,10 @@
 spring:
+  application:
+    name: cache
+  boot:
+    admin:
+      client:
+        url: http://localhost:8099
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/dsl_test?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
@@ -26,3 +32,15 @@ logging:
         cache:
           mapper:
             UserMapper: debug
+server:
+  port: 8081
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

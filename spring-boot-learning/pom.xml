@@ -24,6 +24,8 @@
         <module>spring-boot-server-push</module>
         <module>spring-boot-mail-learning</module>
         <module>spring-boot-actuator-learning</module>
+        <module>spring-boot-admin-server</module>
+        <module>spring-boot-document-learning</module>
     </modules>
 
     <!--定义版本号等信息-->
@@ -38,7 +40,13 @@
         <aliyun.oss.version>3.16.1</aliyun.oss.version>
         <mysql.version>8.0.32</mysql.version>
         <mybatis.version>3.0.1</mybatis.version>
+        <mybatis.plus.version>3.5.3.1</mybatis.plus.version>
         <hibernate-validator.version>8.0.0.Final</hibernate-validator.version>
+        <spring.admin.version>3.0.2</spring.admin.version>
+        <springdoc.version>2.1.0</springdoc.version>
+        <knife4j.version>4.1.0</knife4j.version>
+        <zxing.version>3.5.1</zxing.version>
+        <minio.version>8.5.2</minio.version>
     </properties>
 
     <parent>
@@ -99,7 +107,11 @@
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${spring.admin.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
