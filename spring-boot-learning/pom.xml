@@ -23,6 +23,7 @@
         <module>spring-boot-cache-learning</module>
         <module>spring-boot-server-push</module>
         <module>spring-boot-mail-learning</module>
+        <module>spring-boot-actuator-learning</module>
     </modules>
 
     <!--定义版本号等信息-->

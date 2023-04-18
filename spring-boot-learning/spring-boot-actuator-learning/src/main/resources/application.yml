@@ -1,0 +1,14 @@
+management:
+  endpoints:
+    # 全部端点 https://docs.spring.io/spring-boot/docs/3.0.5/reference/html/actuator.html#actuator.endpoints
+    web:
+      exposure:
+#        include: health,info
+        include: '*'      # 全部暴露
+  endpoint:
+    health:
+      show-details: always
+
+spring:
+  profiles:
+    active: pro
