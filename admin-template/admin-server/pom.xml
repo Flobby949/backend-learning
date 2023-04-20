@@ -24,6 +24,11 @@
             <artifactId>admin-system</artifactId>
             <version>${reversion}</version>
         </dependency>
+        <dependency>
+            <groupId>top.flobby</groupId>
+            <artifactId>admin-biz</artifactId>
+            <version>${reversion}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

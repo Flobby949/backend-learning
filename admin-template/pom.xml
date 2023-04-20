@@ -18,6 +18,7 @@
         <module>admin-base</module>
         <module>admin-server</module>
         <module>admin-system</module>
+        <module>admin-biz</module>
     </modules>
     <packaging>pom</packaging>
 
