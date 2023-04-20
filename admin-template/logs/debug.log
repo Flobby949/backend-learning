@@ -1,0 +1,8 @@
+2023-04-20 19:50:40.367 [main] DEBUG top.flobby.SpringBootServerApplication - Running with Spring Boot v3.0.5, Spring v6.0.7
+2023-04-20 19:50:43.582 [main] DEBUG t.flobby.security.filter.AuthenticationTokenFilter - Filter 'authenticationTokenFilter' configured for use
+2023-04-20 19:52:24.875 [main] DEBUG top.flobby.SpringBootServerApplication - Running with Spring Boot v3.0.5, Spring v6.0.7
+2023-04-20 19:52:27.372 [main] DEBUG t.flobby.security.filter.AuthenticationTokenFilter - Filter 'authenticationTokenFilter' configured for use
+2023-04-20 19:53:17.767 [main] DEBUG top.flobby.SpringBootServerApplication - Running with Spring Boot v3.0.5, Spring v6.0.7
+2023-04-20 19:53:20.391 [main] DEBUG t.flobby.security.filter.AuthenticationTokenFilter - Filter 'authenticationTokenFilter' configured for use
+2023-04-20 19:53:34.059 [main] DEBUG top.flobby.SpringBootServerApplication - Running with Spring Boot v3.0.5, Spring v6.0.7
+2023-04-20 19:53:37.262 [main] DEBUG t.flobby.security.filter.AuthenticationTokenFilter - Filter 'authenticationTokenFilter' configured for use
