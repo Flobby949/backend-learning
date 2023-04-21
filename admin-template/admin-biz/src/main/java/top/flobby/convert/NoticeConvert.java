@@ -2,7 +2,7 @@ package top.flobby.convert;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
-import top.flobby.entity.Notice;
+import top.flobby.entity.NoticeEntity;
 import top.flobby.vo.NoticeVO;
 
 import java.util.List;
@@ -20,7 +20,7 @@ public interface NoticeConvert {
 
     NoticeVO convert(NoticeConvert entity);
 
-    Notice convert(NoticeVO vo);
+    NoticeEntity convert(NoticeVO vo);
 
-    List<NoticeVO> convertList(List<Notice> list);
+    List<NoticeVO> convertList(List<NoticeEntity> list);
 }

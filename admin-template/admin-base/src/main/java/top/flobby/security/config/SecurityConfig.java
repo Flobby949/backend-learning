@@ -52,7 +52,12 @@ public class SecurityConfig {
     }
 
 
-
+    /**
+     * 身份验证管理器
+     * 实现账号密码登录
+     *
+     * @return {@link AuthenticationManager}
+     */
     @Bean
     public AuthenticationManager authenticationManager() {
         List<AuthenticationProvider> providerList = new ArrayList<>();
@@ -71,7 +76,9 @@ public class SecurityConfig {
         String[] permits = permitList.toArray(new String[0]);
 
         http
+                // 把 token 过滤器配置在 usernamePassword 过滤器的前面，就支持 token 认证了
                 .addFilterBefore(authenticationTokenFilter, UsernamePasswordAuthenticationFilter.class)
+                // STATELESS 无状态：前后端分离开发配置
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().authorizeHttpRequests(auth -> auth
                         .requestMatchers(permits).permitAll()

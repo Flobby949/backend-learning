@@ -7,6 +7,7 @@ import top.flobby.rbac.vo.SysMenuVO;
 import top.flobby.security.user.UserDetail;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * 菜单管理
@@ -31,4 +32,5 @@ public interface SysMenuService extends BaseService<SysMenuEntity> {
     List<SysMenuVO> getUserMenuList(UserDetail user, Integer type);
 
 
+    Set<String> getAuthority(UserDetail userDetail);
 }

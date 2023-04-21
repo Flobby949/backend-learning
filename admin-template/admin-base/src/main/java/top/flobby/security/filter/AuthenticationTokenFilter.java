@@ -19,6 +19,9 @@ import top.flobby.security.utils.TokenUtils;
 import java.io.IOException;
 
 /**
+ * Spring Security 默认不支持 token 认证，也不支持前后端分离
+ * 通过新增过滤器，让 spring security 支持 token 认证
+ * 然后把这个过滤器配置在 UsernamePasswordAuthenticationFilter 前面
  * @author : Flobby
  * @program : admin-template
  * @description : 认证过滤器

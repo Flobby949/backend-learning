@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import top.flobby.common.utils.PageResult;
 import top.flobby.convert.NoticeConvert;
 import top.flobby.dao.NoticeDao;
-import top.flobby.entity.Notice;
+import top.flobby.entity.NoticeEntity;
 import top.flobby.mybatis.service.impl.BaseServiceImpl;
 import top.flobby.query.NoticeQuery;
 import top.flobby.service.NoticeService;
@@ -22,16 +22,16 @@ import top.flobby.vo.NoticeVO;
  **/
 
 @Service
-public class NoticeServiceImpl extends BaseServiceImpl<NoticeDao, Notice> implements NoticeService {
+public class NoticeServiceImpl extends BaseServiceImpl<NoticeDao, NoticeEntity> implements NoticeService {
     @Override
     public PageResult<NoticeVO> page(NoticeQuery query) {
-        IPage<Notice> page = baseMapper.selectPage(getPage(query), getWrapper(query));
+        IPage<NoticeEntity> page = baseMapper.selectPage(getPage(query), getWrapper(query));
         return new PageResult<>(NoticeConvert.INSTANCE.convertList(page.getRecords()), page.getTotal());
     }
 
-    private Wrapper<Notice> getWrapper(NoticeQuery query) {
-        LambdaQueryWrapper<Notice> wrapper = new LambdaQueryWrapper<>();
-        wrapper.like(StrUtil.isNotBlank(query.getTitle()), Notice::getTitle, query.getTitle());
+    private Wrapper<NoticeEntity> getWrapper(NoticeQuery query) {
+        LambdaQueryWrapper<NoticeEntity> wrapper = new LambdaQueryWrapper<>();
+        wrapper.like(StrUtil.isNotBlank(query.getTitle()), NoticeEntity::getTitle, query.getTitle());
         return wrapper;
     }
 }

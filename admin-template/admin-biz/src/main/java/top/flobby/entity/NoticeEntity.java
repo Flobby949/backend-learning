@@ -16,7 +16,7 @@ import top.flobby.mybatis.entity.BaseEntity;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @TableName("t_notice")
-public class Notice extends BaseEntity {
+public class NoticeEntity extends BaseEntity {
     /**
      * 标题
      */

@@ -1,7 +1,7 @@
 package top.flobby.dao;
 
 import org.apache.ibatis.annotations.Mapper;
-import top.flobby.entity.Notice;
+import top.flobby.entity.NoticeEntity;
 import top.flobby.mybatis.dao.BaseDao;
 
 /**
@@ -12,5 +12,5 @@ import top.flobby.mybatis.dao.BaseDao;
  **/
 
 @Mapper
-public interface NoticeDao extends BaseDao<Notice> {
+public interface NoticeDao extends BaseDao<NoticeEntity> {
 }

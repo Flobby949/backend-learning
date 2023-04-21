@@ -2,6 +2,7 @@ package top.flobby.mybatis.handler;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import org.apache.ibatis.reflection.MetaObject;
+import top.flobby.common.enums.DeleteFlagEnum;
 import top.flobby.security.user.SecurityUser;
 import top.flobby.security.user.UserDetail;
 
@@ -33,7 +34,7 @@ public class FieldMetaObjectHandler implements MetaObjectHandler {
         // 更新时间
         strictInsertFill(metaObject, UPDATE_TIME, Date.class, date);
         // 删除标识
-        strictInsertFill(metaObject, DELETED, Integer.class, 0);
+        strictInsertFill(metaObject, DELETED, Integer.class, DeleteFlagEnum.NOT_DELETED.getValue());
     }
 
     @Override

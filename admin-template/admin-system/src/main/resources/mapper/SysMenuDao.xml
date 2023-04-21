@@ -22,4 +22,19 @@
         ORDER BY t3.sort
     </select>
 
+    <select id="getUserAuthorityList" resultType="java.lang.String">
+        SELECT sm.authority
+        FROM sys_user_role ur
+                 LEFT JOIN sys_role_menu rm on ur.role_id = rm.role_id
+                 LEFT JOIN sys_menu sm on rm.menu_id = sm.id
+        WHERE ur.user_id = #{userId}
+          AND ur.deleted = 0
+          AND rm.deleted = 0
+          AND sm.deleted = 0
+    </select>
+
+    <select id="getAuthorityList" resultType="java.lang.String">
+        SELECT authority FROM sys_menu WHERE deleted = 0
+    </select>
+
 </mapper>

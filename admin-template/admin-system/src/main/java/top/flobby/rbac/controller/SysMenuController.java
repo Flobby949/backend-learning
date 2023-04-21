@@ -14,6 +14,7 @@ import top.flobby.security.user.SecurityUser;
 import top.flobby.security.user.UserDetail;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * 菜单管理
@@ -46,4 +47,11 @@ public class SysMenuController {
         return Result.ok(list);
     }
 
+    @GetMapping("authority")
+    @Operation(summary = "用户权限集合")
+    public Result<Set<String>> authority() {
+        UserDetail user = SecurityUser.getUser();
+        Set<String> authority = sysMenuService.getAuthority(user);
+        return Result.ok(authority);
+    }
 }
