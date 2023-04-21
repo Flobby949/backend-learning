@@ -18,7 +18,7 @@ import java.util.List;
 public interface NoticeConvert {
     NoticeConvert INSTANCE = Mappers.getMapper(NoticeConvert.class);
 
-    NoticeVO convert(NoticeConvert entity);
+    NoticeVO convert(NoticeEntity entity);
 
     NoticeEntity convert(NoticeVO vo);
 
