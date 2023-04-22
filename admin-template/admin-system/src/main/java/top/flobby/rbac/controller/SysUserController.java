@@ -5,12 +5,16 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import top.flobby.common.utils.Result;
 import top.flobby.rbac.convert.SysUserConvert;
+import top.flobby.rbac.service.SysMenuService;
 import top.flobby.rbac.service.SysUserService;
+import top.flobby.rbac.vo.SysAuthVO;
 import top.flobby.rbac.vo.SysUserPasswordVO;
-import top.flobby.rbac.vo.SysUserVO;
 import top.flobby.security.user.SecurityUser;
 import top.flobby.security.user.UserDetail;
 
@@ -27,12 +31,17 @@ import top.flobby.security.user.UserDetail;
 public class SysUserController {
     private final SysUserService sysUserService;
     private final PasswordEncoder passwordEncoder;
+    private final SysMenuService sysMenuService;
 
     @PostMapping("info")
     @Operation(summary = "获取登录用户信息")
-    public Result<SysUserVO> info() {
-        SysUserVO user = SysUserConvert.INSTANCE.convert(SecurityUser.getUser());
-        return Result.ok(user);
+    public Result<SysAuthVO> info() {
+        UserDetail userDetail = SecurityUser.getUser();
+        SysAuthVO authVO = new SysAuthVO();
+        authVO.setUser(SysUserConvert.INSTANCE.convert(userDetail));
+        authVO.setNav(sysMenuService.getUserMenuList(userDetail, 0));
+        authVO.setAuthority(sysMenuService.getAuthority(userDetail));
+        return Result.ok(authVO);
     }
 
     @PostMapping("password")

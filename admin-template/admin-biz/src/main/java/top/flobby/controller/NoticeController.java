@@ -24,7 +24,7 @@ import java.util.List;
  **/
 
 @RestController
-@RequestMapping("notice")
+@RequestMapping("/sys/notice")
 @Tag(name = "通知管理")
 @AllArgsConstructor
 public class NoticeController {
@@ -32,7 +32,7 @@ public class NoticeController {
 
     @GetMapping("page")
     @Operation(summary = "通知分页")
-    @PreAuthorize("hasAuthority('sys:notice:page')")
+    @PreAuthorize("hasAnyAuthority('sys:notice:page')")
     public Result<PageResult<NoticeVO>> page(@ParameterObject @Valid NoticeQuery query) {
         return Result.ok(noticeService.page(query));
     }
@@ -45,14 +45,14 @@ public class NoticeController {
 
     @GetMapping("{id}")
     @Operation(summary = "通知信息")
-    @PreAuthorize("hasAuthority('sys:notice:info')")
+    @PreAuthorize("hasAnyAuthority('sys:notice:info')")
     public Result<NoticeVO> get(@PathVariable("id") Long id) {
         return Result.ok(NoticeConvert.INSTANCE.convert(noticeService.getById(id)));
     }
 
     @PostMapping
     @Operation(summary = "新增通知")
-    @PreAuthorize("hasAuthority('sys:notice:save')")
+    @PreAuthorize("hasAnyAuthority('sys:notice:save')")
     public Result<String> save(@RequestBody @Valid NoticeVO vo) {
         noticeService.save(vo);
         return Result.ok();
@@ -60,7 +60,7 @@ public class NoticeController {
 
     @PutMapping
     @Operation(summary = "修改通知")
-    @PreAuthorize("hasAuthority('sys:notice:update')")
+    @PreAuthorize("hasAnyAuthority('sys:notice:update')")
     public Result<String> update(@RequestBody @Valid NoticeVO vo) {
         noticeService.update(vo);
         return Result.ok();
@@ -68,7 +68,7 @@ public class NoticeController {
 
     @DeleteMapping("{id}")
     @Operation(summary = "删除通知")
-    @PreAuthorize("hasAuthority('sys:notice:delete')")
+    @PreAuthorize("hasAnyAuthority('sys:notice:delete')")
     public Result<String> delete(@PathVariable("id") Long id) {
         noticeService.delete(id);
         return Result.ok();
@@ -76,7 +76,7 @@ public class NoticeController {
 
     @DeleteMapping("batch")
     @Operation(summary = "批量删除通知")
-    @PreAuthorize("hasAuthority('sys:notice:delete')")
+    @PreAuthorize("hasAnyAuthority('sys:notice:delete')")
     public Result<String> deletes(@RequestBody Long[] ids) {
         noticeService.deleteBatch(ids);
         return Result.ok();
