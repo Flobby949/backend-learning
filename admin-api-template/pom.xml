@@ -13,6 +13,9 @@
     <version>${revision}</version>
     <packaging>pom</packaging>
     <description>多模块 API 模版项目父工程</description>
+    <modules>
+        <module>api-base</module>
+    </modules>
 
     <properties>
         <revision>1.0.0</revision>
