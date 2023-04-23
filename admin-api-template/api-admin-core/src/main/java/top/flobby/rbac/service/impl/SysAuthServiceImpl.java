@@ -4,10 +4,11 @@ import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import top.flobby.common.exception.ServerException;
-import org.springframework.security.core.Authentication;
 import top.flobby.rbac.service.SysAuthService;
+import top.flobby.rbac.service.SysCaptchaService;
 import top.flobby.rbac.vo.SysAccountLoginVO;
 import top.flobby.rbac.vo.SysTokenVO;
 import top.flobby.security.cache.TokenStoreCache;
@@ -25,9 +26,16 @@ import top.flobby.security.utils.TokenUtils;
 public class SysAuthServiceImpl implements SysAuthService {
     private final TokenStoreCache tokenStoreCache;
     private final AuthenticationManager authenticationManager;
+    private final SysCaptchaService captchaService;
 
     @Override
     public SysTokenVO loginByAccount(SysAccountLoginVO login) {
+        // 验证码效验
+        boolean flag = captchaService.validate(login.getKey(), login.getCaptcha());
+        if (!flag) {
+            throw new ServerException("验证码错误");
+        }
+
         Authentication authentication;
         try {
             // 用户认证
