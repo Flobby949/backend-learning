@@ -6,10 +6,10 @@ import org.springframework.stereotype.Service;
 import top.flobby.rbac.convert.SysUserConvert;
 import top.flobby.rbac.entity.SysUserEntity;
 import top.flobby.rbac.enums.UserStatusEnum;
+import top.flobby.rbac.service.SysMenuService;
 import top.flobby.rbac.service.SysUserDetailsService;
 import top.flobby.security.user.UserDetail;
 
-import java.util.HashSet;
 import java.util.Set;
 
 
@@ -21,6 +21,7 @@ import java.util.Set;
 @Service
 @AllArgsConstructor
 public class SysUserDetailsServiceImpl implements SysUserDetailsService {
+    private final SysMenuService menuService;
 
     @Override
     public UserDetails getUserDetails(SysUserEntity userEntity) {
@@ -33,7 +34,7 @@ public class SysUserDetailsServiceImpl implements SysUserDetailsService {
         }
 
         // 用户权限列表
-        Set<String> authoritySet = new HashSet<>();
+        Set<String> authoritySet = menuService.getUserAuthority(userDetail);
         userDetail.setAuthoritySet(authoritySet);
 
         return userDetail;
