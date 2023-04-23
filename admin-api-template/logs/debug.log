@@ -102,3 +102,5 @@
 2023-04-23 20:04:22.595 [http-nio-8080-exec-26] DEBUG top.flobby.rbac.dao.SysLogLoginDao.selectPage - ==>  Preparing: SELECT id,username,ip,address,user_agent,status,operation,create_time FROM sys_log_login ORDER BY create_time DESC LIMIT ?
 2023-04-23 20:04:22.596 [http-nio-8080-exec-26] DEBUG top.flobby.rbac.dao.SysLogLoginDao.selectPage - ==> Parameters: 1(Long)
 2023-04-23 20:04:22.597 [http-nio-8080-exec-26] DEBUG top.flobby.rbac.dao.SysLogLoginDao.selectPage - <==      Total: 1
+2023-04-23 20:13:28.730 [main] DEBUG top.flobby.SpringBootServerApplication - Running with Spring Boot v3.0.6, Spring v6.0.8
+2023-04-23 20:13:30.932 [main] DEBUG t.flobby.security.filter.AuthenticationTokenFilter - Filter 'authenticationTokenFilter' configured for use
