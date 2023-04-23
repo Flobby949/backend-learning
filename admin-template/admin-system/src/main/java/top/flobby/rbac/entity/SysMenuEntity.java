@@ -8,7 +8,7 @@ import top.flobby.mybatis.entity.BaseEntity;
 /**
  * 菜单表实体类
  *
- * @author mqxu
+ * @author flobby
  */
 @Data
 @EqualsAndHashCode(callSuper=false)

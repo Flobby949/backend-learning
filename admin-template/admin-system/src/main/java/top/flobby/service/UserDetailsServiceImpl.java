@@ -12,7 +12,7 @@ import top.flobby.rbac.service.SysUserDetailsService;
 /**
  * 账号登录 UserDetailsService
  *
- * @author mqxu
+ * @author flobby
  **/
 @Service
 @AllArgsConstructor

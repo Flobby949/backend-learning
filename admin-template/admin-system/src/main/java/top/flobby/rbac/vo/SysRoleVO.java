@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * 系统角色vo
  *
- * @author mqxu
+ * @author flobby
  */
 @Data
 @Schema(description = "角色")

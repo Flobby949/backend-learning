@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * 系统用户vo
  *
- * @author mqxu
+ * @author flobby
  */
 @Data
 @Schema(description = "用户")

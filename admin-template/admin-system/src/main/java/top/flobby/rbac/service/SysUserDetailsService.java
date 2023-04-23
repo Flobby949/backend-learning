@@ -6,7 +6,7 @@ import top.flobby.rbac.entity.SysUserEntity;
 
 /**
  * 用户信息服务
- * @author moqi
+ * @author flobby
  */
 public interface SysUserDetailsService {
 

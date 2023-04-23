@@ -9,7 +9,7 @@ import top.flobby.rbac.enums.UserStatusEnum;
 /**
  * 系统用户表实体类
  *
- * @author mqxu
+ * @author flobby
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

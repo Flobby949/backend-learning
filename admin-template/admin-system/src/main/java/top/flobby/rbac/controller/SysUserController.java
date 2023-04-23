@@ -22,7 +22,7 @@ import top.flobby.security.user.UserDetail;
 /**
  * 用户管理接口
  *
- * @author mqxu
+ * @author flobby
  */
 @RestController
 @RequestMapping("sys/user")

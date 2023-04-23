@@ -12,7 +12,7 @@ import java.util.Set;
 /**
  * 菜单管理
  *
- * @author mqxu
+ * @author flobby
  */
 public interface SysMenuService extends BaseService<SysMenuEntity> {
 

@@ -10,7 +10,7 @@ import top.flobby.rbac.service.SysRoleMenuService;
 /**
  * 角色与菜单对应服务
  *
- * @author mqxu
+ * @author flobby
  */
 @Service
 public class SysRoleMenuServiceImpl extends BaseServiceImpl<SysRoleMenuDao, SysRoleMenuEntity> implements SysRoleMenuService {

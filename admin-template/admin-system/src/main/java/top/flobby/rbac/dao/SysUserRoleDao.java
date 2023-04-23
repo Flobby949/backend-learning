@@ -8,7 +8,7 @@ import top.flobby.rbac.entity.SysUserRoleEntity;
 /**
  * 用户角色关系 dao
  *
- * @author mqxu
+ * @author flobby
  */
 @Mapper
 public interface SysUserRoleDao extends BaseDao<SysUserRoleEntity> {

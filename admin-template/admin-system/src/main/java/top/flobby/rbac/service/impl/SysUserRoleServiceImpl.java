@@ -10,7 +10,7 @@ import top.flobby.rbac.service.SysUserRoleService;
 /**
  * 用户角色关系服务
  *
- * @author mqxu
+ * @author flobby
  */
 @Service
 public class SysUserRoleServiceImpl extends BaseServiceImpl<SysUserRoleDao, SysUserRoleEntity> implements SysUserRoleService {

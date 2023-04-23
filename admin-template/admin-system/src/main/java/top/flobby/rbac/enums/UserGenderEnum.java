@@ -8,7 +8,7 @@ import java.util.Objects;
 /**
  * 用户性别状态枚举
  *
- * @author mqxu
+ * @author flobby
  */
 @Getter
 @AllArgsConstructor

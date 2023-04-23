@@ -7,7 +7,7 @@ import top.flobby.rbac.entity.SysUserEntity;
 /**
  * 用户管理
  *
- * @author mqxu
+ * @author flobby
  */
 public interface SysUserService extends BaseService<SysUserEntity> {
 

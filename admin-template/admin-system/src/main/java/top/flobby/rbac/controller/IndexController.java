@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 首页 欢迎信息
  *
- * @author mqxu
+ * @author flobby
  */
 @RestController
 public class IndexController {

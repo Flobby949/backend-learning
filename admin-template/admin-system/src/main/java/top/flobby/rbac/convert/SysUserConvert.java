@@ -10,7 +10,7 @@ import top.flobby.security.user.UserDetail;
 /**
  * 系统用户实体转换
  *
- * @author moqi
+ * @author flobby
  */
 @Mapper
 public interface SysUserConvert {

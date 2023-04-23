@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 菜单管理 dao
  *
- * @author mqxu
+ * @author flobby
  */
 @Mapper
 public interface SysMenuDao extends BaseDao<SysMenuEntity> {

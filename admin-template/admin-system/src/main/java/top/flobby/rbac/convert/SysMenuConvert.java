@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 系统菜单实体转换
  *
- * @author moqi
+ * @author flobby
  */
 @Mapper
 public interface SysMenuConvert {

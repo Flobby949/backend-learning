@@ -207,4 +207,16 @@ INSERT INTO `sys_user_role` VALUES (5, 4, 10004, 0, 10000, '2023-04-18 19:42:49'
 INSERT INTO `sys_user_role` VALUES (6, 4, 10005, 0, 10000, '2023-04-18 19:43:13', 10000, '2023-04-18 19:43:19');
 COMMIT;
 
+CREATE TABLE `sys_log_login` (
+  `id` bigint NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `username` varchar(50) DEFAULT NULL COMMENT '用户名',
+  `ip` varchar(32) DEFAULT NULL COMMENT '登录IP',
+  `address` varchar(32) DEFAULT NULL COMMENT '登录地点',
+  `user_agent` varchar(500) DEFAULT NULL COMMENT 'User Agent',
+  `status` tinyint DEFAULT NULL COMMENT '登录状态  0：失败   1：成功',
+  `operation` tinyint unsigned DEFAULT NULL COMMENT '操作信息   0：登录成功   1：退出成功  2：验证码错误  3：账号密码错误',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='登录日志';
+
 SET FOREIGN_KEY_CHECKS = 1;

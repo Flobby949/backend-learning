@@ -7,7 +7,7 @@ import top.flobby.rbac.vo.SysTokenVO;
 /**
  * 权限认证服务
  *
- * @author mqxu
+ * @author flobby
  */
 public interface SysAuthService {
 

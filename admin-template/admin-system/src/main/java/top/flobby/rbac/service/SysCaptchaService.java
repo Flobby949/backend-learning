@@ -6,7 +6,7 @@ import top.flobby.rbac.vo.SysCaptchaVO;
 /**
  * 验证码
  *
- * @author mqxu
+ * @author flobby
  */
 public interface SysCaptchaService {
     /**

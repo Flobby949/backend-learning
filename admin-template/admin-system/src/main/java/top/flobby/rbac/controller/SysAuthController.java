@@ -16,7 +16,7 @@ import top.flobby.security.utils.TokenUtils;
 /**
  * 认证接口
  *
- * @author mqxu
+ * @author flobby
  */
 @RestController
 @RequestMapping("sys/auth")
@@ -44,7 +44,6 @@ public class SysAuthController {
     @Operation(summary = "退出")
     public Result<String> logout(HttpServletRequest request) {
         sysAuthService.logout(TokenUtils.getAccessToken(request));
-
         return Result.ok();
     }
 }
