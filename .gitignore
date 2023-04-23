@@ -36,5 +36,8 @@ build/
 ### Mac OS ###
 .DS_Store
 
-
 aliyun.properties
+pnpm-lock.yaml
+
+node_modules
+/node_modules
