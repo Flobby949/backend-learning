@@ -1,0 +1,30 @@
+2023-04-23 18:39:58.220 [main] DEBUG top.flobby.SpringBootServerApplication - Running with Spring Boot v3.0.6, Spring v6.0.8
+2023-04-23 18:40:01.989 [main] DEBUG t.flobby.security.filter.AuthenticationTokenFilter - Filter 'authenticationTokenFilter' configured for use
+2023-04-23 18:41:55.393 [main] DEBUG top.flobby.SpringBootServerApplication - Running with Spring Boot v3.0.6, Spring v6.0.8
+2023-04-23 18:41:57.769 [main] DEBUG t.flobby.security.filter.AuthenticationTokenFilter - Filter 'authenticationTokenFilter' configured for use
+2023-04-23 18:48:51.363 [main] DEBUG top.flobby.SpringBootServerApplication - Running with Spring Boot v3.0.6, Spring v6.0.8
+2023-04-23 18:48:53.934 [main] DEBUG t.flobby.security.filter.AuthenticationTokenFilter - Filter 'authenticationTokenFilter' configured for use
+2023-04-23 18:49:26.062 [http-nio-8080-exec-12] DEBUG top.flobby.rbac.dao.SysUserDao.selectList - ==>  Preparing: SELECT id,username,password,real_name,avatar,gender,email,mobile,super_admin,status,creator,create_time,updater,update_time,deleted FROM sys_user WHERE deleted=0 AND (username = ?)
+2023-04-23 18:49:26.080 [http-nio-8080-exec-12] DEBUG top.flobby.rbac.dao.SysUserDao.selectList - ==> Parameters: admin(String)
+2023-04-23 18:49:26.100 [http-nio-8080-exec-12] DEBUG top.flobby.rbac.dao.SysUserDao.selectList - <==      Total: 1
+2023-04-23 19:25:37.898 [main] DEBUG top.flobby.SpringBootServerApplication - Running with Spring Boot v3.0.6, Spring v6.0.8
+2023-04-23 19:25:40.124 [main] DEBUG t.flobby.security.filter.AuthenticationTokenFilter - Filter 'authenticationTokenFilter' configured for use
+2023-04-23 19:26:44.889 [http-nio-8080-exec-1] DEBUG top.flobby.rbac.dao.SysUserDao.selectList - ==>  Preparing: SELECT id,username,password,real_name,avatar,gender,email,mobile,super_admin,status,creator,create_time,updater,update_time,deleted FROM sys_user WHERE deleted=0 AND (username = ?)
+2023-04-23 19:26:44.907 [http-nio-8080-exec-1] DEBUG top.flobby.rbac.dao.SysUserDao.selectList - ==> Parameters: admin(String)
+2023-04-23 19:26:44.926 [http-nio-8080-exec-1] DEBUG top.flobby.rbac.dao.SysUserDao.selectList - <==      Total: 1
+2023-04-23 19:26:48.066 [http-nio-8080-exec-4] DEBUG top.flobby.rbac.dao.SysUserDao.selectList - ==>  Preparing: SELECT id,username,password,real_name,avatar,gender,email,mobile,super_admin,status,creator,create_time,updater,update_time,deleted FROM sys_user WHERE deleted=0 AND (username = ?)
+2023-04-23 19:26:48.066 [http-nio-8080-exec-4] DEBUG top.flobby.rbac.dao.SysUserDao.selectList - ==> Parameters: admin(String)
+2023-04-23 19:26:48.068 [http-nio-8080-exec-4] DEBUG top.flobby.rbac.dao.SysUserDao.selectList - <==      Total: 1
+2023-04-23 19:29:39.448 [http-nio-8080-exec-9] DEBUG top.flobby.rbac.dao.SysUserDao.selectList - ==>  Preparing: SELECT id,username,password,real_name,avatar,gender,email,mobile,super_admin,status,creator,create_time,updater,update_time,deleted FROM sys_user WHERE deleted=0 AND (username = ?)
+2023-04-23 19:29:39.449 [http-nio-8080-exec-9] DEBUG top.flobby.rbac.dao.SysUserDao.selectList - ==> Parameters: admin(String)
+2023-04-23 19:29:39.451 [http-nio-8080-exec-9] DEBUG top.flobby.rbac.dao.SysUserDao.selectList - <==      Total: 1
+2023-04-23 19:30:44.704 [main] DEBUG top.flobby.SpringBootServerApplication - Running with Spring Boot v3.0.6, Spring v6.0.8
+2023-04-23 19:30:46.759 [main] DEBUG t.flobby.security.filter.AuthenticationTokenFilter - Filter 'authenticationTokenFilter' configured for use
+2023-04-23 19:30:57.921 [http-nio-8080-exec-16] DEBUG top.flobby.rbac.dao.SysUserDao.selectList - ==>  Preparing: SELECT id,username,password,real_name,avatar,gender,email,mobile,super_admin,status,creator,create_time,updater,update_time,deleted FROM sys_user WHERE deleted=0 AND (username = ?)
+2023-04-23 19:30:57.938 [http-nio-8080-exec-16] DEBUG top.flobby.rbac.dao.SysUserDao.selectList - ==> Parameters: admin(String)
+2023-04-23 19:30:57.955 [http-nio-8080-exec-16] DEBUG top.flobby.rbac.dao.SysUserDao.selectList - <==      Total: 1
+2023-04-23 19:35:19.113 [main] DEBUG top.flobby.SpringBootServerApplication - Running with Spring Boot v3.0.6, Spring v6.0.8
+2023-04-23 19:35:21.438 [main] DEBUG t.flobby.security.filter.AuthenticationTokenFilter - Filter 'authenticationTokenFilter' configured for use
+2023-04-23 19:35:27.249 [http-nio-8080-exec-1] DEBUG top.flobby.rbac.dao.SysUserDao.selectList - ==>  Preparing: SELECT id,username,password,real_name,avatar,gender,email,mobile,super_admin,status,creator,create_time,updater,update_time,deleted FROM sys_user WHERE deleted=0 AND (username = ?)
+2023-04-23 19:35:27.267 [http-nio-8080-exec-1] DEBUG top.flobby.rbac.dao.SysUserDao.selectList - ==> Parameters: admin(String)
+2023-04-23 19:35:27.291 [http-nio-8080-exec-1] DEBUG top.flobby.rbac.dao.SysUserDao.selectList - <==      Total: 1
