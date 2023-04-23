@@ -11,7 +11,7 @@ import java.util.Date;
 
 /**
  * @author : Flobby
- * @program : admin-template
+ * @program : admin-api-template
  * @description : 登录日志VO
  * @create : 2023-04-23 13:41
  **/

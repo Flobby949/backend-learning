@@ -10,7 +10,7 @@ import java.util.Set;
 
 /**
  * @author : Flobby
- * @program : admin-template
+ * @program : admin-api-template
  * @description : 用户信息返回VO
  * @create : 2023-04-22 15:45
  **/
