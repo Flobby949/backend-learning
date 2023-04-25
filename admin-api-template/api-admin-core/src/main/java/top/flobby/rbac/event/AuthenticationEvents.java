@@ -43,9 +43,9 @@ public class AuthenticationEvents {
     @EventListener
     public void onFailure(AbstractAuthenticationFailureEvent event) {
         // 获取用户信息
-        UserDetail userDetail = (UserDetail) event.getAuthentication().getPrincipal();
+        String username = (String) event.getAuthentication().getPrincipal();
         // 保存日志
-        logLoginService.save(userDetail.getUsername(), Constant.FAIL, LoginOperationEnum.ACCOUNT_FAIL.getValue());
+        logLoginService.save(username, Constant.FAIL, LoginOperationEnum.ACCOUNT_FAIL.getValue());
     }
 
 }
