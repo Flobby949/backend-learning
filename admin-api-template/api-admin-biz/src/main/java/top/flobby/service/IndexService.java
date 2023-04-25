@@ -25,9 +25,10 @@ public interface IndexService {
     /**
      * 柱状图
      *
+     * @param type 类型
      * @return {@link BarVO}
      */
-    BarVO statistics2();
+    BarVO statistics2(String type);
 
     /**
      * 分类统计标签
