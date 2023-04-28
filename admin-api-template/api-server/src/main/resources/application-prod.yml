@@ -2,14 +2,14 @@ spring:
   data:
     redis:
       database: 1
-      host: localhost
+      host: 106.14.246.27
       port: 6379
       password: kobe24
       #timeout: 6000ms  # 连接超时时长（毫秒）
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/db_admin?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&nullCatalogMeansCurrent=true
+    url: jdbc:mysql://106.14.246.27:3306/db_admin?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&nullCatalogMeansCurrent=true
     username: root
     password: kobe24
     hikari:

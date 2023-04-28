@@ -55,6 +55,7 @@ public class NoticeServiceImpl extends BaseServiceImpl<NoticeDao, NoticeEntity> 
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void deleteBatch(Long[] ids) {
         removeByIds(Arrays.asList(ids));
     }
