@@ -8,6 +8,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
+import top.flobby.common.constant.Constant;
 import top.flobby.common.excel.ExcelFinishCallBack;
 import top.flobby.common.exception.ServerException;
 import top.flobby.common.utils.ExcelUtils;
@@ -57,6 +58,7 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUserDao, SysUserEntit
         params.put("gender", query.getGender());
         // 分页
         IPage<SysUserEntity> page = getPage(query);
+        params.put(Constant.PAGE, page);
         List<SysUserEntity> userEntityList = baseMapper.getList(params);
         return new PageResult<>(SysUserConvert.INSTANCE.convertList(userEntityList), page.getTotal());
     }
