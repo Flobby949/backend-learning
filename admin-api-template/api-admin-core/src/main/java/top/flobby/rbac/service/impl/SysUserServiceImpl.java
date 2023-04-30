@@ -138,4 +138,11 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUserDao, SysUserEntit
         ExcelUtils.excelExport(SysUserExcelVO.class, "用户数据", "sheet1", userExcelVOList);
     }
 
+    @Override
+    public void updateStatus(Long id, Integer status) {
+        SysUserEntity entity = baseMapper.getById(id);
+        entity.setStatus(status);
+        baseMapper.updateById(entity);
+    }
+
 }

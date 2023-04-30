@@ -65,4 +65,12 @@ public interface SysUserService extends BaseService<SysUserEntity> {
      * 导出
      */
     void export();
+
+    /**
+     * 更新状态
+     *
+     * @param id     id
+     * @param status 状态
+     */
+    void updateStatus(Long id, Integer status);
 }
