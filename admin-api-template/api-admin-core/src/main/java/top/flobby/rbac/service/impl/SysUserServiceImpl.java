@@ -56,6 +56,8 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUserDao, SysUserEntit
         params.put("username", query.getUsername());
         params.put("mobile", query.getMobile());
         params.put("gender", query.getGender());
+        params.put("beginTime", query.getBeginTime());
+        params.put("endTime", query.getEndTime());
         // 分页
         IPage<SysUserEntity> page = getPage(query);
         params.put(Constant.PAGE, page);

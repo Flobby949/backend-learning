@@ -18,4 +18,6 @@ import top.flobby.common.query.Query;
 public class NoticeQuery extends Query {
     @Schema(description = "通知标题")
     private String title;
+    @Schema(description = "通知内容")
+    private String content;
 }

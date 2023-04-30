@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import top.flobby.common.query.Query;
 
+import java.util.Date;
+
 /**
  * @author : Flobby
  * @program : admin-api-template
@@ -23,4 +25,8 @@ public class SysUserQuery extends Query {
     private String mobile;
     @Schema(description = "性别")
     private Integer gender;
+    @Schema(description = "创建起始时间")
+    private Date beginTime;
+    @Schema(description = "创建结束时间")
+    private Date endTime;
 }
