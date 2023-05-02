@@ -23,4 +23,12 @@ public interface SysAuthService {
      * @param accessToken accessToken
      */
     void logout(String accessToken);
+
+    /**
+     * 发送验证码
+     *
+     * @param mobile 手机号
+     * @return boolean
+     */
+    boolean sendCode(String mobile);
 }

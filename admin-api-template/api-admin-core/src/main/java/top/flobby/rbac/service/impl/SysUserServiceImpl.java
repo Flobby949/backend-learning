@@ -151,4 +151,9 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUserDao, SysUserEntit
         baseMapper.updateById(entity);
     }
 
+    @Override
+    public SysUserEntity getByMobile(String mobile) {
+        return baseMapper.getByMobile(mobile);
+    }
+
 }

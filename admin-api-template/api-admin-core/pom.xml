@@ -35,6 +35,12 @@
             <groupId>com.alibaba</groupId>
             <artifactId>easyexcel</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>top.flobby</groupId>
+            <artifactId>sms-plugin</artifactId>
+            <version>${revision}</version>
+        </dependency>
     </dependencies>
 
 </project>

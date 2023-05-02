@@ -1,5 +1,6 @@
 package top.flobby.rbac.service.impl;
 
+import cn.hutool.core.util.RandomUtil;
 import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -8,15 +9,18 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import top.flobby.common.constant.Constant;
 import top.flobby.common.exception.ServerException;
+import top.flobby.rbac.entity.SysUserEntity;
 import top.flobby.rbac.enums.LoginOperationEnum;
 import top.flobby.rbac.service.SysAuthService;
 import top.flobby.rbac.service.SysCaptchaService;
 import top.flobby.rbac.service.SysLogLoginService;
+import top.flobby.rbac.service.SysUserService;
 import top.flobby.rbac.vo.SysAccountLoginVO;
 import top.flobby.rbac.vo.SysTokenVO;
 import top.flobby.security.cache.TokenStoreCache;
 import top.flobby.security.user.UserDetail;
 import top.flobby.security.utils.TokenUtils;
+import top.flobby.sms.api.SmsApi;
 
 
 /**
@@ -31,6 +35,8 @@ public class SysAuthServiceImpl implements SysAuthService {
     private final AuthenticationManager authenticationManager;
     private final SysCaptchaService captchaService;
     private final SysLogLoginService logLoginService;
+    private final SysUserService sysUserService;
+    private final SmsApi smsApi;
 
     @Override
     public SysTokenVO loginByAccount(SysAccountLoginVO login) {
@@ -70,5 +76,17 @@ public class SysAuthServiceImpl implements SysAuthService {
         logLoginService.save(user.getUsername(), Constant.SUCCESS, LoginOperationEnum.LOGOUT_SUCCESS.getValue());
         // 从缓存中删除用户
         tokenStoreCache.deleteUser(accessToken);
+    }
+
+    @Override
+    public boolean sendCode(String mobile) {
+        // 生成六位验证码
+        String code = RandomUtil.randomNumbers(6);
+        SysUserEntity user = sysUserService.getByMobile(mobile);
+        if (user == null) {
+            throw new ServerException("手机号未注册");
+        }
+        // 发送短信
+        return smsApi.sendCode(mobile, "code", code);
     }
 }

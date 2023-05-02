@@ -48,4 +48,14 @@ public class SysAuthController {
         sysAuthService.logout(TokenUtils.getAccessToken(request));
         return Result.ok();
     }
+
+    @PostMapping("send/code")
+    @Operation(summary = "发送短信验证码")
+    public Result<String> sendSmsCode(@RequestParam String mobile) {
+        boolean flag = sysAuthService.sendCode(mobile);
+        if (!flag) {
+            return Result.error("短信发送失败！");
+        }
+        return Result.ok();
+    }
 }
