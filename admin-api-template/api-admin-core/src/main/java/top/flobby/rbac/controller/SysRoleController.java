@@ -41,6 +41,14 @@ public class SysRoleController {
         return Result.ok(page);
     }
 
+    @GetMapping("list")
+    @Operation(summary = "角色列表")
+    @PreAuthorize("hasAuthority('sys:role:page')")
+    public Result<List<SysRoleVO>> page() {
+        List<SysRoleEntity> list = sysRoleService.list();
+        return Result.ok(SysRoleConvert.INSTANCE.convertList(list));
+    }
+
     @GetMapping("{id}")
     @Operation(summary = "角色信息")
     @PreAuthorize("hasAuthority('sys:role:info')")

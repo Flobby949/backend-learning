@@ -19,6 +19,7 @@ import top.flobby.rbac.dao.SysUserDao;
 import top.flobby.rbac.entity.SysUserEntity;
 import top.flobby.rbac.enums.SuperAdminEnum;
 import top.flobby.rbac.query.SysUserQuery;
+import top.flobby.rbac.service.SysUserRoleService;
 import top.flobby.rbac.service.SysUserService;
 import top.flobby.rbac.vo.SysUserExcelVO;
 import top.flobby.rbac.vo.SysUserVO;
@@ -39,6 +40,7 @@ import static top.flobby.common.constant.Constant.ENABLE;
 @AllArgsConstructor
 public class SysUserServiceImpl extends BaseServiceImpl<SysUserDao, SysUserEntity> implements SysUserService {
     private final PasswordEncoder passwordEncoder;
+    private final SysUserRoleService sysUserRoleService;
 
     @Override
     @Transactional(rollbackFor = Exception.class)
@@ -93,7 +95,9 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUserDao, SysUserEntit
         if (byPhone != null && !byPhone.getId().equals(vo.getId())) {
             throw new ServerException("手机号已存在");
         }
-        // 更改
+        // 更改用户角色
+        sysUserRoleService.saveOrUpdate(vo.getId(), vo.getRoleIdList());
+        // 更改用户信息
         SysUserEntity entity = SysUserConvert.INSTANCE.convert(vo);
         updateById(entity);
     }

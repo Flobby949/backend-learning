@@ -22,5 +22,5 @@ public interface SysUserRoleDao extends BaseDao<SysUserRoleEntity> {
      * @param userId 用户id
      * @return {@link List}<{@link Long}>
      */
-    List<Long> selectRoleIdList(@Param("id") Long userId);
+    List<Long> selectRoleIdList(@Param("userId") Long userId);
 }

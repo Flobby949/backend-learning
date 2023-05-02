@@ -48,8 +48,8 @@ public class SysRoleServiceImpl extends BaseServiceImpl<SysRoleDao, SysRoleEntit
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void save(SysRoleVO vo) {
+        // 修改用户信息
         SysRoleEntity entity = SysRoleConvert.INSTANCE.convert(vo);
-        System.out.println(entity);
         baseMapper.insert(entity);
     }
 
