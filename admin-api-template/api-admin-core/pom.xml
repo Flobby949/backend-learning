@@ -41,6 +41,12 @@
             <artifactId>sms-plugin</artifactId>
             <version>${revision}</version>
         </dependency>
+
+        <dependency>
+            <groupId>top.flobby</groupId>
+            <artifactId>storage-plugin</artifactId>
+            <version>${revision}</version>
+        </dependency>
     </dependencies>
 
 </project>
