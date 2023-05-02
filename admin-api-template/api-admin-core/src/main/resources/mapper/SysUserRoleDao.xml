@@ -4,6 +4,9 @@
 <mapper namespace="top.flobby.rbac.dao.SysUserRoleDao">
 
     <select id="selectRoleIdList" resultType="java.lang.Long">
-        SELECT role_id FROM sys_user_role WHERE user_id = #{id}
+        SELECT role_id
+        FROM sys_user_role
+        WHERE user_id = #{userId}
+          AND deleted = 0
     </select>
 </mapper>
