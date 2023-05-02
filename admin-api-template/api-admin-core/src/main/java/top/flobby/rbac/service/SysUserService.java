@@ -78,7 +78,7 @@ public interface SysUserService extends BaseService<SysUserEntity> {
      * 通过手机获取用户
      *
      * @param mobile 手机号
-     * @return {@link SysUserEntity}
+     * @return {@link SysUserVO}
      */
-    SysUserEntity getByMobile(String mobile);
+    SysUserVO getByMobile(String mobile);
 }

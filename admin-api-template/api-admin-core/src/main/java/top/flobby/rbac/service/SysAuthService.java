@@ -2,6 +2,7 @@ package top.flobby.rbac.service;
 
 
 import top.flobby.rbac.vo.SysAccountLoginVO;
+import top.flobby.rbac.vo.SysMobileLoginVO;
 import top.flobby.rbac.vo.SysTokenVO;
 
 /**
@@ -23,6 +24,8 @@ public interface SysAuthService {
      * @param accessToken accessToken
      */
     void logout(String accessToken);
+
+    SysTokenVO loginByMobile(SysMobileLoginVO login);
 
     /**
      * 发送验证码

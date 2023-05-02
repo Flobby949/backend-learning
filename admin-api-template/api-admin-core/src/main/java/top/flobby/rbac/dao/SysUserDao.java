@@ -49,12 +49,6 @@ public interface SysUserDao extends BaseDao<SysUserEntity> {
      * @return {@link SysUserEntity}
      */
     default SysUserEntity getByPhone(String phone) {
-        return this.selectOne(new QueryWrapper<SysUserEntity>()
-                .eq("mobile", phone)
-                .eq("deleted", DeleteFlagEnum.NOT_DELETED.getValue()));
-    }
-
-    default SysUserEntity getByMobile(String mobile) {
-        return this.selectOne(new QueryWrapper<SysUserEntity>().eq("mobile", mobile));
+        return this.selectOne(new QueryWrapper<SysUserEntity>().eq("mobile", phone));
     }
 }

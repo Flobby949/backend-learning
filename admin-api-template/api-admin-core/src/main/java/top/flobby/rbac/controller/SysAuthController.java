@@ -10,6 +10,7 @@ import top.flobby.rbac.service.SysAuthService;
 import top.flobby.rbac.service.SysCaptchaService;
 import top.flobby.rbac.vo.SysAccountLoginVO;
 import top.flobby.rbac.vo.SysCaptchaVO;
+import top.flobby.rbac.vo.SysMobileLoginVO;
 import top.flobby.rbac.vo.SysTokenVO;
 import top.flobby.security.utils.TokenUtils;
 
@@ -57,5 +58,11 @@ public class SysAuthController {
             return Result.error("短信发送失败！");
         }
         return Result.ok();
+    }
+
+    @PostMapping("mobile")
+    @Operation(summary = "手机号登录")
+    public Result<SysTokenVO> mobileLogin(@RequestBody SysMobileLoginVO loginVO) {
+        return Result.ok(sysAuthService.loginByMobile(loginVO));
     }
 }
