@@ -32,6 +32,12 @@
         </dependency>
 
         <dependency>
+            <groupId>top.flobby</groupId>
+            <artifactId>storage-plugin</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>

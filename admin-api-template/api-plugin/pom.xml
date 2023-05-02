@@ -10,6 +10,7 @@
     </parent>
     <modules>
         <module>sms-plugin</module>
+        <module>storage-plugin</module>
     </modules>
     <artifactId>api-plugin</artifactId>
     <packaging>pom</packaging>
